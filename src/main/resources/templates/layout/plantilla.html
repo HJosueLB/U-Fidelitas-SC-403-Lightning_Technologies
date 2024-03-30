@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head th:fragment="head">
+        <title>Lightning Technologies</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>   
+    </head>
+
+    <body class="d-flex flex-column min-vh-100"> 
+        <header th:fragment="header" class="header">
+
+            <!-- Configuración del NAV -->
+
+            <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0F447D;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><span style="color: #F28E13; font-weight: bold;">Lightning</span> Technologies</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link me-3" href="#">Equipos Laptops</a>
+                            </li>
+                            
+                            <li class="nav-item me-3">
+                                <a class="nav-link" href="#">Componentes</a>
+                            </li>
+                            
+                            <li class="nav-item me-3">
+                                <a class="nav-link" href="#">Periféricos</a>
+                            </li>
+                            
+                            <li class="nav-item me-3">
+                                <a class="nav-link" href="#">Servicios</a>
+                            </li>
+                            
+                        </ul>
+                        <ul class="navbar-nav">
+                            
+                            <li class="nav-item me-3">
+                                 <a class="nav-link text-white" href="#">
+                                     <i class="fa-solid fa-cart-shopping" style="color: #F28E13;"></i> Carrito de compras        
+                                 </a>
+                            </li>
+                            
+                            <!-- CONFIGURAR DROPDOWN -->
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">
+                                    <i class="fas fa-user"style="color: #F28E13;"></i> Mi cuenta
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Configuración del SECTION -->
+
+            <section class="flex-grow-1 d-flex align-items-center justify-content-center min-vh-100">
+              <div class="container">
+
+                <!-- Texto de bienvenida -->
+                <p class="text-center fs-5">
+                ¡Bienvenido a <span style="color: #F28E13;"><strong>Lightning</strong></span> 
+                <span style="color: #0F447D;">Technologies!</span>
+                </p>
+                
+                <p class="text-center fs-5">Donde cada clic te acerca a la tecnología de tus sueños. Explora nuestra selección curada de equipos y 
+                accesorios para elevar tu día a día, ya sea en la oficina o en la comodidad de tu hogar. Y con nuestro soporte 
+                técnico especializado, tu tranquilidad está siempre asegurada.</p>
+
+                <p class="text-center fs-5" style="color: #F28E13;"><strong>Encuentra lo que amas. Ama lo que encuentras.</strong><br><br></p>
+
+                <!-- Iconos de opciones -->
+                <div class="d-flex justify-content-center text-center">
+                  <div class="mx-2">
+                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                      <i class="fas fa-laptop fa-2x" style="color: #0F447D;"></i>
+                    </div>
+                    <p class="mt-2" style="color: #0F447D;">Equipos</p>
+                  </div>
+                  <div class="mx-2">
+                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                      <i class="fas fa-memory fa-2x" style="color: #0F447D;"></i>
+                    </div>
+                    <p class="mt-2" style="color: #0F447D;">Componentes</p>
+                  </div>
+                  <div class="mx-2">
+                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                      <i class="fas fa-keyboard fa-2x" style="color: #0F447D;"></i>
+                    </div>
+                    <p class="mt-2" style="color: #0F447D;">Periféricos</p>
+                  </div>
+                  <div class="mx-2">
+                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                      <i class="fas fa-wrench fa-2x" style="color: #0F447D;"></i>
+                    </div>
+                    <p class="mt-2" style="color: #0F447D;">Servicios</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            
+            </header>
+        
+        <!-- Configuración del FOOTER -->   
+        
+        <footer th:fragment="footer" class="mt-auto p-2 text-white" style="background-color: #0F447D;">            
+            <div class="container">
+                <div class="col">
+                    <p class="lead text-center" >
+                        Derechos Reservados Lightning Tecnologies &COPY; 2024
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

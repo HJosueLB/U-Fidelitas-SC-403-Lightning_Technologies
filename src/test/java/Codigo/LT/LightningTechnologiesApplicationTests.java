@@ -1,4 +1,4 @@
-package Codigo.Lightning_Technologies;
+package Codigo.LT;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
