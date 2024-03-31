@@ -21,7 +21,7 @@
                 <aside class="col-md-4 mb-4">
                     <div class="card" style="border: 1px solid #0F447D; padding: 1rem;">
                         <h5 class="mb-3" style="text-align: center; border-bottom: 1px solid #0F447D;  color: #F28E13;">Marca</h5>
-                        <form action="@{/equipos/listado}" method="get">
+                        <form th:action="@{/equipos/listado}" method="get">
                             <div th:each="marca : ${marcas}" class="form-check">
                                 <input class="form-check-input" type="checkbox" th:value="${marca}"
                                        th:id="${#strings.replace(marca, ' ', '_')}" th:name="marca"

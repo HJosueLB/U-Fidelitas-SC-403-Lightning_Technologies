@@ -23,40 +23,41 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
             <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0F447D;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><span style="color: #F28E13; font-weight: bold;">Lightning</span> Technologies</a>
+                    <a class="navbar-brand" th:href="@{/}">
+                    <span style="color: #F28E13; font-weight: bold;">Lightning</span> Technologies</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto">
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link me-3" th:href= "@{/equipos/listado}">Equipos de Computo</a>
                             </li>
-                            
+
                             <li class="nav-item me-3">
-                                <a class="nav-link" href="#">Componentes</a>
+                                <a class="nav-link" th:href="@{/componentes/listado}">Componentes</a>
                             </li>
-                            
+
                             <li class="nav-item me-3">
                                 <a class="nav-link" th:href="@{/perifericos/listado}">Periféricos</a>
                             </li>
-                            
+
                             <li class="nav-item me-3">
                                 <a class="nav-link" href="#">Servicios</a>
                             </li>
-                            
+
                         </ul>
                         <ul class="navbar-nav">
-                            
+
                             <li class="nav-item me-3">
-                                 <a class="nav-link text-white" href="#">
-                                     <i class="fa-solid fa-cart-shopping" style="color: #F28E13;"></i> Carrito de compras        
-                                 </a>
+                                <a class="nav-link text-white" href="#">
+                                    <i class="fa-solid fa-cart-shopping" style="color: #F28E13;"></i> Carrito de compras        
+                                </a>
                             </li>
-                            
+
                             <!-- CONFIGURAR DROPDOWN -->
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#">
                                     <i class="fas fa-user"style="color: #F28E13;"></i> Mi cuenta
@@ -67,56 +68,66 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
             </nav>
         </header>
-              
-             <!-- Configuración del SECTION -->
 
-            <section class="flex-grow-1 d-flex align-items-center justify-content-center min-vh-100">
-              <div class="container">
+        <!-- Configuración del SECTION -->
+
+        <section class="flex-grow-1 d-flex align-items-center justify-content-center min-vh-100">
+            <div class="container">
 
                 <!-- Texto de bienvenida -->
                 <p class="text-center fs-5">
-                ¡Bienvenido a <span style="color: #F28E13;"><strong>Lightning</strong></span> 
-                <span style="color: #0F447D;">Technologies!</span>
+                    ¡Bienvenido a <span style="color: #F28E13;"><strong>Lightning</strong></span> 
+                    <span style="color: #0F447D;">Technologies!</span>
                 </p>
-                
+
+                                
                 <p class="text-center fs-5">Donde cada clic te acerca a la tecnología de tus sueños. Explora nuestra selección curada de equipos y 
                 accesorios para elevar tu día a día, ya sea en la oficina o en la comodidad de tu hogar. Y con nuestro soporte 
                 técnico especializado, tu tranquilidad está siempre asegurada.</p>
 
                 <p class="text-center fs-5" style="color: #F28E13;"><strong>Encuentra lo que amas. Ama lo que encuentras.</strong><br><br></p>
 
+                
                 <!-- Iconos de opciones -->
                 <div class="d-flex justify-content-center text-center">
-                  <div class="mx-2">
-                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
-                      <i class="fas fa-laptop fa-2x" style="color: #0F447D;"></i>
-                    </div>
-                    <p class="mt-2" style="color: #0F447D;">Equipos</p>
-                  </div>
-                  <div class="mx-2">
-                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
-                      <i class="fas fa-memory fa-2x" style="color: #0F447D;"></i>
-                    </div>
-                    <p class="mt-2" style="color: #0F447D;">Componentes</p>
-                  </div>
-                  <div class="mx-2">
-                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
-                      <i class="fas fa-keyboard fa-2x" style="color: #0F447D;"></i>
-                    </div>
-                    <p class="mt-2" style="color: #0F447D;">Periféricos</p>
-                  </div>
-                  <div class="mx-2">
-                    <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
-                      <i class="fas fa-wrench fa-2x" style="color: #0F447D;"></i>
-                    </div>
-                    <p class="mt-2" style="color: #0F447D;">Servicios</p>
-                  </div>
+                    
+                    <!-- Direccionar a Equipos -->
+                    <a th:href="@{/equipos/listado}" class="mx-2 text-decoration-none">
+                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                            <i class="fas fa-laptop fa-2x" style="color: #0F447D;"></i>
+                        </div>
+                        <p class="mt-2" style="color: #0F447D;">Equipos</p>
+                    </a>
+                    
+                    <!-- Direccionar a Componentes -->
+                    <a th:href="@{/componentes/listado}" class="mx-2 text-decoration-none">
+                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                            <i class="fas fa-memory fa-2x" style="color: #0F447D;"></i>
+                        </div>
+                        <p class="mt-2" style="color: #0F447D;">Componentes</p>
+                    </a>
+                    
+                    <!-- Direccionar a Periféricos -->
+                    <a th:href="@{/perifericos/listado}" class="mx-2 text-decoration-none">
+                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                            <i class="fas fa-keyboard fa-2x" style="color: #0F447D;"></i>
+                        </div>
+                        <p class="mt-2" style="color: #0F447D;">Periféricos</p>
+                    </a>
+                    
+                    <!-- Direccionar a Servicios | PENDIENTE DE INCLUIR-->
+                    <a th:href="@{#}" class="mx-2 text-decoration-none">
+                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="background-color: #F28E13; width: 100px; height: 100px;">
+                            <i class="fas fa-wrench fa-2x" style="color: #0F447D;"></i>
+                        </div>
+                        <p class="mt-2" style="color: #0F447D;">Servicios</p>
+                    </a>
                 </div>
-              </div>
-            </section>
-        
+
+        </section>
+
         <!-- Configuración del FOOTER -->   
-        
+
         <footer th:fragment="footer" class="mt-auto p-2 text-white" style="background-color: #0F447D;">            
             <div class="container">
                 <div class="col">
