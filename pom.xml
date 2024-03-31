@@ -14,7 +14,7 @@
     <name>Lightning_Technologies</name>
     <description>Tienda en linea | Pagina Web</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>20</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -84,6 +84,7 @@
             <artifactId>firebase-admin</artifactId>
             <version>9.2.0</version>
         </dependency>
+ 
      
     </dependencies>
 
