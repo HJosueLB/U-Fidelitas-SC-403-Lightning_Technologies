@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Lightning Technologies</title>
+    </head>
+    <body>
+
+        <!-- Bienvenida a la pagina de Servicios -->
+
+        <section th:fragment="listado" class="container min-vh-100" >
+            <p>    </p>
+            <p>    </p>
+            <p class="text-center fs-5" style="color: #F28E13;"><strong>Servicios Disponibles</strong></p>
+            <p class="text-center fs-5">Cuidamos la vida útil de tu equipo con mantenimiento preventivo personalizado <br>
+                    reaccionamos con soluciones correctivas precisas. Cotiza cada servicio y asegura el máximo rendimiento.</p>
+            <p>    </p>
+            <p class="text-center fs-5">Protege y optimiza tu tecnología con nosotros.</p>
+
+            <!-- Servicios Disponibles -->
+
+            <div class="row"> 
+                <div th:each="servicio : ${servicios}" class="col-md-6"> 
+                    <div class="card" style="border: 1px solid #0F447D;">                            
+                        <div class="card-body" style="text-align: left; flex-grow: 1;">
+                            <div style="display: flex; align-items: center; color: #0F447D; font-weight: bold;">
+                                <h5 style="color: #F28E13; margin: 0; font-weight: bold;" th:text="${servicio.nombre}">Nombre del servicio</h5>
+                                <span style="margin: 0 10px;">:</span>
+                                <h6 style="margin: 0; font-weight: bold;" th:text="${servicio.valor}">valor</h6>
+                            </div>
+                            <p>    </p>
+                            <p th:text="${servicio.descripcion}">Descripción</p>
+                            <p>    </p>
+                            <h6 style="color: #0F447D; margin: 0; padding-right: 5px; font-weight: bold;" th:text="${servicio.mensaje}">Mensaje adicional</h6>
+                            <p>    </p>
+                            <a href="#" class="btn btn-primary" style="background-color: #F28E13; color: #0F447D; ">Cotizar</a>                           
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <p>    </p>
+            <p>    </p>
+        </section>
+    </body>
+</html>

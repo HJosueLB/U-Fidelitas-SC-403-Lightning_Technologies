@@ -117,3 +117,15 @@ INSERT INTO LightningTechnologies.componentes (modelo, marca, tipoCI, ruta_image
 INSERT INTO LightningTechnologies.componentes (modelo, marca, tipoCI, ruta_imagen, precio) VALUES ('DELTA 16GB DDR5', 'TeamGroup', 'Memoria RAM', 'https://extremetechcr.com/tienda/30120-large_default/teamgroup-t-force-delta-rgb-16gb-ddr5-6000-negro.jpg',28995);
 INSERT INTO LightningTechnologies.componentes (modelo, marca, tipoCI, ruta_imagen, precio) VALUES ('PRIME 850W GOLD', 'Asus', 'Fuente de Poder', 'https://extremetechcr.com/tienda/34599-large_default/asus-prime-850w-gold-modular.jpg',79990);
 INSERT INTO LightningTechnologies.componentes (modelo, marca, tipoCI, ruta_imagen, precio) VALUES ('A400 960 GB', 'KINGSTON', 'Almacenamiento', 'https://extremetechcr.com/tienda/10302-large_default/kingston-a400-960-gb.jpg',44995);
+
+CREATE TABLE LightningTechnologies.servicios (
+	id_servicios INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    valor VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
+    mensaje VARCHAR(100) NOT NULL,
+     PRIMARY KEY (id_servicios)
+) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8mb4;
+
+INSERT INTO LightningTechnologies.servicios (nombre,valor,descripcion,mensaje) VALUES ('Mantenimiento Preventivo','Anticipa, Protege, Optimiza','Anticipa el futuro y mantén tu equipo en su mejor estado. Con nuestro mantenimiento preventivo, extendemos la vida de tu tecnología y previenes interrupciones antes de que ocurran.','Invierte en el cuidado proactivo de tu equipo.');
+INSERT INTO LightningTechnologies.servicios (nombre,valor,descripcion,mensaje) VALUES ('Mantenimiento Correctivo','Respuestas Rápidas, Soluciones Duraderas','Cuando surgen problemas técnicos, nuestro mantenimiento correctivo está listo para actuar. Brindamos soluciones efectivas para que tu equipo vuelva a operar con normalidad lo antes posible.','Restaura el rendimiento óptimo con expertos de confianza');
