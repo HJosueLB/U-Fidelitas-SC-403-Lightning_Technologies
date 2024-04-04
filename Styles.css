@@ -1,0 +1,27 @@
+/* Estilos para el carrito de compras */
+#carrito {
+    width: 80%;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+}
+
+#total {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 10px;
+}
