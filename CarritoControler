@@ -1,0 +1,46 @@
+package com.LightningTech.controller;
+
+import com.LightningTech.domain.Producto;
+import com.LightningTech.service.ProductoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+@SessionAttributes("carrito")
+public class CarritoController {
+
+    @Autowired
+    private ProductoService productoService;
+
+    @ModelAttribute("carrito")
+    public List<Producto> inicializarCarrito() {
+        return new ArrayList<>();
+    }
+
+    @GetMapping("/carrito")
+    public String verCarrito(Model modelo) {
+        return "carrito";
+    }
+
+    @GetMapping("/carrito/agregar/{id}")
+    public String agregarAlCarrito(@PathVariable("id") Long idProducto, @ModelAttribute("carrito") List<Producto> carrito) {
+        Producto producto = productoService.obtenerProductoPorId(idProducto);
+        if (producto != null) {
+            carrito.add(producto);
+        }
+        return "redirect:/carrito";
+    }
+
+    @GetMapping("/carrito/eliminar/{index}")
+    public String eliminarDelCarrito(@PathVariable("index") int index, @ModelAttribute("carrito") List<Producto> carrito) {
+        if (index >= 0 && index < carrito.size()) {
+            carrito.remove(index);
+        }
+        return "redirect:/carrito";
+    }
+}
