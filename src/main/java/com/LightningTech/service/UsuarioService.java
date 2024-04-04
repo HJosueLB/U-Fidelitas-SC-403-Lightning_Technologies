@@ -8,6 +8,8 @@ import com.LightningTech.domain.Usuario;
  *
  * @author Maik
  */
+
+
 public interface UsuarioService {
     Usuario guardarUsuario(Usuario usuario);
     Usuario obtenerUsuarioPorUsername(String username);
