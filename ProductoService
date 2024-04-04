@@ -1,0 +1,44 @@
+package com.LightningTech.service;
+
+import com.LightningTech.domain.Producto;
+
+import java.util.List;
+
+public interface ProductoService {
+    Producto guardarProducto(Producto producto);
+    List<Producto> obtenerTodosLosProductos();
+    Producto obtenerProductoPorId(Long id);
+}
+
+// ProductoServiceImpl.java
+package com.LightningTech.service.impl;
+
+import com.LightningTech.dao.ProductoDao;
+import com.LightningTech.domain.Producto;
+import com.LightningTech.service.ProductoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ProductoServiceImpl implements ProductoService {
+
+    @Autowired
+    private ProductoDao productoDao;
+
+    @Override
+    public Producto guardarProducto(Producto producto) {
+        return productoDao.save(producto);
+    }
+
+    @Override
+    public List<Producto> obtenerTodosLosProductos() {
+        return productoDao.findAll();
+    }
+
+    @Override
+    public Producto obtenerProductoPorId(Long id) {
+        return productoDao.findById(id).orElse(null);
+    }
+}
