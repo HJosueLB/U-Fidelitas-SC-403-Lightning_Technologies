@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <nav th:fragment="navbar">
+            <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/equipos/listado}">Equipos</a></li>
+            <li><a th:href="@{/perifericos/listado}">Periféricos</a></li>
+            <li><a th:href="@{/componentes}">Componentes</a></li>
+            <li><a th:href="@{/servicios/listado}">Servicios</a></li>
+            <li>
+                <a th:href="@{/registro}" sec:authorize="isAnonymous()">Registro</a>
+                <a th:href="@{/login}" sec:authorize="isAnonymous()">Iniciar Sesión</a>
+                <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>
