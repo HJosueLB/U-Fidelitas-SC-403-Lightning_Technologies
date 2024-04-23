@@ -11,8 +11,6 @@ import lombok.NoArgsConstructor;
  * @author Maik
  */
 
-
-
 @Data
 @NoArgsConstructor
 @Entity
