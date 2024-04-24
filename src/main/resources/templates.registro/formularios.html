@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <h1>Formulario de Registro</h1>
+    <form th:action="@{/registro/guardar}" th:object="${cliente}" method="post">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" required>
+        </div>
+        <div>
+            <label for="apellido1">Primer Apellido:</label>
+              <label for="apellido2">Segundo Apellido:</label>
+            <input type="text" id="apellido2" th:field="*{apellido2}">
+        </div>
+        <div>
+            <label for="identificacion">Ingrese su Identificación:</label>
+            <input type="text" id="identificacion" th:field="*{identificacion}" required>
+        </div>
+        <div>
+            <label for="telefono">Ingrese su número de teléfono:</label>
+            <input type="text" id="telefono" th:field="*{telefono}" required>
+        </div>
+        <div>
+            <label for="email">Ingrese su correo electrónico:</label>
+            <input type="email" id="email" th:field="*{email}" required>
+        </div>
+        <div>
+            <label for="direccion">Dirección domicilio:</label>
+            <input type="text" id="direccion" th:field="*{direccion}" required>
+        </div>
+        <div>
+            <label for="provincia">Provincia:</label>
+            <input type="text" id="provincia" th:field="*{provincia}" required>
+        </div>
+        <div>
+            <label for="canton">Cantón:</label>
+            <input type="text" id="canton" th:field="*{canton}" required>
+        </div>
+        <div>
+            <label for="distrito">Distrito:</label>
+            <input type="text" id="distrito" th:field="*{distrito}" required>
+        </div>
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <h1>Método de Pago</h1>
+    <form th:action="@{/registro/guardarMetodoPago}" th:object="${metodoPago}" method="post">
+        <div>
+            <label for="nombrePropietario">Ingrese su nombre propietario:</label>
+            <input type="text" id="nombrePropietario" th:field="*{nombrePropietario}" required>
+        </div>
+        <div>
+            <label for="numeroTarjeta">Número de tarjeta:</label>
+            <input type="text" id="numeroTarjeta" th:field="*{numeroTarjeta}" required>
+        </div>
+        <div>
+            <label for="ccv">CCV:</label>
+            <input type="text" id="ccv" th:field="*{ccv}" required>
+        </div>
+        <div>
+            <label for="fechaVencimiento">Fecha de vencimiento:</label>
+            <input type="text" id="fechaVencimiento" th:field="*{fechaVencimiento}" required>
+        </div>
+        <div>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" th:field="*{direccion}" required>
+        </div>
+        <div>
+            <label for="provincia">Provincia:</label>
+            <input type="text" id="provincia" th:field="*{provincia}" required>
+        </div>
+        <div>
+            <label for="canton">Cantón:</label>
+            <input type="text" id="canton" th:field="*{canton}" required>
+        </div>
+        <div>
+            <label for="codigoPostal">Código Postal:</label
