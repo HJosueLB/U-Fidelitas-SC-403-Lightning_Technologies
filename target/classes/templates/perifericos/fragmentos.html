@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Lightning Technologies</title>
+    </head>
+    <body>
+
+        <!-- Bienvenida a la pagina de Lista de Perifericos de Computo -->
+
+        <section th:fragment="listado" class="container">
+            <p>    </p>
+            <p>    </p>
+            <p class="text-center fs-5" style="color: #F28E13;"><strong>Periféricos que Complementan tu Espacio Digital</strong></p>
+            <p class="text-center fs-5">Mejora tu experiencia con accesorios que marcan la diferencia. Precisión, comodidad y estilo a tu alcance.</p>
+
+            <div class="row">
+
+                <!-- Filtro -->
+
+                <aside class="col-md-4 mb-4">
+                    <div class="card" style="border: 1px solid #0F447D; padding: 1rem;">
+                        <h5 class="mb-3" style="text-align: center; border-bottom: 1px solid #0F447D;  color: #F28E13;">Marca</h5>
+                        <form th:action="@{/perifericos/listado}" method="get">
+                            <div th:each="marca : ${marcas}" class="form-check">
+                                <input class="form-check-input" type="checkbox" th:value="${marca}"
+                                       th:id="${#strings.replace(marca, ' ', '_')}" th:name="marca"
+                                       th:checked="${marcasSeleccionadas.contains(marca)}" >
+                                    <label class="form-check-label" th:for="${#strings.replace(marca, ' ', '_')}" th:text="${marca}">Marca</label>
+                            </div>
+                            <div class="mt-3" style="text-align: center;">
+                                <button type="submit" class="btn btn-outline-primary">Filtrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </aside>
+
+                <!-- Perifericos disponibles para compra -->
+
+                <div class="col-md-8">
+                    <div class="row">
+                        <div th:each="periferico : ${perifericos}" class="col-md-4 mb-4">
+                            <div class="card h-100" style="border: 1px solid #0F447D;">
+                                <div class="d-flex justify-content-center">
+                                    <img th:src="${periferico.rutaImagen}" class="card-img-top" th:style="'height:200px; width:200px; object-fit:contain;'" alt="Imagen de periferico" th:alt="${periferico.modelo}">
+                                </div>
+                                <div class="card-body" style="text-align: center; flex-grow: 1;">
+                                    <h5 class="card-title" th:text="${periferico.marca}">Marca</h5>
+                                    <h5 class="card-text" th:text="${periferico.modelo}">Modelo de periferico</h5>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; background-color: #0F447D; color: #FFFFFF; padding: 5px; border-radius: 5px;">
+                                        <p class="card-text" style="margin-right: 5px; margin-bottom: 0;">CRC <span th:text="${periferico.precio}">Precio</span></p>
+                                        <a href="#" class="btn btn-primary" style="background-color: #F28E13; color: #0F447D; margin-left: 5px;">Añadir a carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
